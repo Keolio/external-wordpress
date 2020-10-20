@@ -1,0 +1,8 @@
+# All
+.DS_Store
+.env
+.idea
+.history
+.vscode
+.tmp
+/node_modules

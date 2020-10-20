@@ -1,0 +1,227 @@
+.header {
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        &__logo {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            img {
+                min-height: 40px;
+                max-height: 75px;
+                height: 7vh;
+            }
+        }
+        &__burger {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            a {
+                color: $color-third;
+                font-size: 1.5rem;
+            }
+        }
+
+        &__contact {
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        &__navigation {
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+
+            & > div {
+                height: 100%;
+            }
+
+            &__home {
+                margin: 0 1rem;
+                height: 24px;
+                width: 24px;
+                margin-bottom: 6px;
+            }
+
+            ul {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+
+                li {
+                    position: relative;
+                    height: 100%;
+                    margin: 0 1vw;
+                    display: flex;
+                    align-items: center;
+                    a {
+                        color: $color-third;
+                        letter-spacing: 0;
+                        font-size: 1.5625rem;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                    @include media-breakpoint-up(xl) {
+                        &:hover {
+                            .sub-menu {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                        &:hover::before,
+                        &.current-menu-parent::before {
+                            content: "";
+                            height: 5px;
+                            width: 100%;
+                            position: absolute;
+                            z-index: 3;
+                            left: 0;
+                            bottom: -0.5rem;
+                            background-color: $color-third;
+                        }
+                    }
+                }
+            }
+
+            .sub-menu {
+                position: absolute;
+                z-index: 2;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $color-black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 1.5rem 2rem 1rem;
+                height: auto;
+                width: 20vw;
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.4s;
+
+                li {
+                    margin: 1rem 0;
+                    a {
+                        line-height: 1.5rem;
+                        font-size: 1.125rem;
+                        text-transform: initial;
+                        font-weight: normal;
+                        font-family: Arial, sans-serif;
+                    }
+                    @include media-breakpoint-up(xl) {
+                        &:hover::before,
+                        &.current-menu-item::before {
+                            content: "";
+                            height: 5px;
+                            width: 5px;
+                            border-radius: 50%;
+                            position: absolute;
+                            z-index: 3;
+                            left: -1rem;
+                            top: 0.5625rem;
+                            background-color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(lg) {
+    .header {
+        &__inner {
+            padding: 0.5rem 2rem;
+
+            &__navigation {
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: $color-black;
+                border-top: 1px solid $color-primary;
+                transform: translateY(20%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.6s ease-in-out;
+
+                .menu-header-container {
+                    width: 100%;
+                }
+
+                ul {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    padding-top: 2.5rem;
+                    width: 100%;
+                    li {
+                        height: auto;
+                        margin-bottom: 3rem;
+                        display: block;
+                        width: 100%;
+                        a {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .sub-menu {
+                    position: relative;
+                    justify-content: flex-start;
+                    align-items: center;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    transform: translateX(0);
+                    max-height: 0;
+                    padding: 0 1rem;
+                    margin: 0;
+
+                    li {
+                        margin: 1rem 0;
+                        a {
+                            line-height: 1rem;
+                            font-size: 1rem;
+                        }
+                    }
+
+                    &.open {
+                        height: 100%;
+                        opacity: 1;
+                        visibility: visible;
+                        padding: 1rem;
+                        max-height: 100vh;
+                    }
+                }
+            }
+
+            &__burger {
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: $color-white;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

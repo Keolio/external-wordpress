@@ -1,0 +1,61 @@
+.gui {
+    &__color {
+        &__black {
+            background: $color-black;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+
+        &__lightblack {
+            background: $color-lightblack;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+
+        &__white {
+            background: $color-white;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+
+            border: 1px solid $color-black;
+        }
+
+        &__grey {
+            background: $color-grey;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+
+        &__primary {
+            background: $color-primary;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+
+        &__secondary {
+            background: $color-secondary;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+
+        &__third {
+            background: $color-third;
+            height: 50px;
+            width: 50px;
+            margin: 2rem;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+}

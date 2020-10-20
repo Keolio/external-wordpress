@@ -1,0 +1,145 @@
+/********* TITLES ***********/
+h1,
+.h--1 {
+    font-size: $s-one;
+    line-height: $l-one;
+}
+
+h2,
+.h--2 {
+    font-size: $s-two;
+    line-height: $l-two;
+}
+
+h3,
+.h--3 {
+    font-size: $s-three;
+    line-height: $l-three;
+}
+
+h4,
+.h--4 {
+    font-size: $s-four;
+    line-height: $l-four;
+}
+
+h5,
+.h--5 {
+    font-size: $s-five;
+    line-height: $l-five;
+}
+
+p {
+    font-weight: $f-regular;
+    font-size: $s-text;
+    line-height: $l-text;
+}
+
+/********* FONT WEIGHT ***********/
+.f--thin {
+    font-weight: $f-thin;
+}
+
+.f--light {
+    font-weight: $f-light;
+}
+
+.f--regular {
+    font-weight: $f-regular;
+}
+
+.f--medium {
+    font-weight: $f-medium;
+}
+
+.f--bold {
+    font-weight: $f-bold;
+}
+
+.f--black {
+    font-weight: $f-black;
+}
+
+/********* FONT COLORS ***********/
+.t--black {
+    color: $color-black;
+}
+
+.t--lightblack {
+    color: $color-lightblack;
+}
+
+.t--grey {
+    color: $color-grey;
+}
+
+.t--white {
+    color: $color-white;
+}
+
+.t--primary {
+    color: $color-primary;
+}
+
+.t--secondary {
+    color: $color-secondary;
+}
+
+.t--third {
+    color: $color-third;
+}
+
+/********* BUTTONS ***********/
+.btn {
+    background: none;
+    font-size: 1.5625rem;
+    cursor: pointer;
+    padding: 10px 80px;
+    display: inline-block;
+    letter-spacing: 0px;
+    font-weight: 300;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 2rem;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+.btn-secondary {
+    background-color: $color-white;
+    color: $color-secondary;
+    border: 1px solid $color-primary;
+}
+
+/********* BACKGROUNDS ***********/
+.has-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--white {
+        background-color: $color-white;
+    }
+
+    &--black {
+        background-color: $color-black;
+    }
+
+    &--grey {
+        background-color: $color-grey;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+    }
+}
